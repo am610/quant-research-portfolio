@@ -2,6 +2,9 @@
 
 Rigorous, reproducible studies of statistical arbitrage, predictive uncertainty, and market microstructure.
 
+[![Open baseline in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/01_pair_trading_baseline.ipynb)
+[![Open regime study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/02_regime_filter.ipynb)
+
 ![Statistical arbitrage baseline](docs/assets/pair_baseline.png)
 
 ## First result
@@ -11,6 +14,14 @@ The first locked baseline uses XLE and XOP adjusted daily prices. The hedge rela
 The untouched test period produced a 1.34 percent annual return, 5.02 percent annual volatility, a Sharpe ratio of 0.29, and a maximum drawdown of 9.40 percent. A stationary block bootstrap gave a wide 95 percent Sharpe interval from negative 0.96 to 1.46. Validation performance was negative.
 
 This is not evidence of a dependable trading strategy. It is an intentionally transparent benchmark and motivates the next research question: can regime information and calibrated uncertainty distinguish temporary mean reversion from structural breakdown?
+
+## Regime result
+
+![Causal regime filter](docs/assets/regime_filter.png)
+
+A causal filter based on rolling spread persistence and innovation volatility was selected using validation data only. On the untouched test period it increased the Sharpe estimate from 0.49 to 0.73 and reduced maximum drawdown from 9.40 percent to 3.78 percent.
+
+The 95 percent bootstrap Sharpe interval still crosses zero, from negative 0.22 to 1.79. The result is therefore encouraging but not conclusive. This uncertainty motivates the calibrated prediction study rather than a profitability claim.
 
 ## Research program
 
