@@ -6,6 +6,39 @@ Rigorous, reproducible studies of statistical arbitrage, predictive uncertainty,
 [![Open regime study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/02_regime_filter.ipynb)
 [![Open universe study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/03_peer_universe.ipynb)
 [![Open PCA and cost study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/04_pca_cost_sensitivity.ipynb)
+[![Open final synthesis in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/05_final_validation.ipynb)
+
+## Executive summary
+
+This project asks whether classical and machine learning inspired statistical arbitrage signals survive selection controls, chronological testing, uncertainty analysis, and realistic implementation friction.
+
+The answer is cautious. Selected peer pairs produce a positive test estimate with low market beta and survive the specified execution stresses, but their uncertainty interval includes zero and their performance depends on modeling choices. A principal component residual strategy looks competitive before costs but loses most of its value because of high turnover. A passive SPY investment strongly outperforms during the test window, while carrying materially different market exposure.
+
+![Final validation dashboard](docs/assets/final_validation_dashboard.png)
+
+| Model | Annual return | Volatility | Sharpe | Maximum drawdown | Market beta |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Selected peer pairs | 1.86 percent | 5.75 percent | 0.35 | 7.51 percent | 0.02 |
+| PCA residuals | 0.43 percent | 7.60 percent | 0.09 | 9.38 percent | 0.02 |
+| SPY benchmark | 21.47 percent | 15.44 percent | 1.34 | 18.76 percent | 1.00 |
+
+These figures use three basis points of turnover cost, 50 basis points of annual short borrow cost, and a one day execution delay for the arbitrage models.
+
+## Research architecture
+
+```mermaid
+flowchart LR
+    A[Public adjusted prices] --> B[Chronological partitions]
+    B --> C[Training only pair selection]
+    B --> D[Walk forward PCA residuals]
+    C --> E[False discovery control]
+    E --> F[Walk forward hedge estimates]
+    D --> G[Market neutral residual positions]
+    F --> H[Cost and borrow accounting]
+    G --> H
+    H --> I[Locked test evaluation]
+    I --> J[Bootstrap and robustness checks]
+```
 
 ## Main study
 
@@ -75,7 +108,7 @@ This study asks when accurate short horizon forecasts remain tradable after fees
 
 ## Status
 
-The data validation, cost accounting, risk metrics, bootstrap uncertainty, classical pair baseline, causal regime filter, training only pair selection, false discovery correction, walk forward hedge estimation, principal component residual baseline, and cost sensitivity analysis are implemented and tested. Four executed Colab notebooks document the research progression.
+Project 1 is complete. It includes data validation, cost and borrow accounting, execution delays, risk metrics, benchmark comparison, bootstrap uncertainty, pair selection, false discovery correction, walk forward estimation, regime filtering, principal component residuals, exposure diagnostics, parameter robustness, and time boundary robustness. Five executed Colab notebooks document the research progression.
 
 ## Reproduce the first study
 

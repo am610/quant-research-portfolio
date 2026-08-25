@@ -32,7 +32,12 @@ def test_pair_backtest_outputs_are_aligned() -> None:
     model = fit_pair_model(np.log(prices.iloc[:300]), "A", "B")
     result = run_pair_backtest(prices.iloc[300:], model, "A", "B", window=30)
     assert result["pnl"].index.equals(prices.iloc[300:].index)
-    assert set(result["pnl"].columns) == {"gross_return", "cost", "net_return"}
+    assert set(result["pnl"].columns) == {
+        "gross_return",
+        "trading_cost",
+        "borrow_cost",
+        "net_return",
+    }
 
 
 def test_threshold_position_exits_near_zero() -> None:

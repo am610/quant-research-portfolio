@@ -1,0 +1,226 @@
+{
+  "common_assumptions": {
+    "trading_cost_bps": 3.0,
+    "borrow_cost_bps_annual": 50.0,
+    "execution_lag_days": 1
+  },
+  "model_comparison": {
+    "Selected pairs": {
+      "annual_return": 0.0185577967264412,
+      "annual_volatility": 0.057484802726365296,
+      "sharpe_ratio": 0.3486328061501714,
+      "sortino_ratio": 0.34609089994850645,
+      "maximum_drawdown": -0.07505854580430127,
+      "ending_wealth": 1.0551719764778547,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    "PCA residuals": {
+      "annual_return": 0.004266345875114208,
+      "annual_volatility": 0.07604602882827124,
+      "sharpe_ratio": 0.09408370631055424,
+      "sortino_ratio": 0.11967150814773946,
+      "maximum_drawdown": -0.09383496999224639,
+      "ending_wealth": 1.0125115565753307,
+      "positive_period_fraction": 0.5149456521739131
+    },
+    "SPY benchmark": {
+      "annual_return": 0.2147008833535784,
+      "annual_volatility": 0.15443506964887105,
+      "sharpe_ratio": 1.3365809379446543,
+      "sortino_ratio": 1.7701240188842398,
+      "maximum_drawdown": -0.18755229425221798,
+      "ending_wealth": 1.7648350708463012,
+      "positive_period_fraction": 0.5692934782608695
+    },
+    "Cash": {
+      "annual_return": 0.0,
+      "annual_volatility": 0.0,
+      "sharpe_ratio": null,
+      "sortino_ratio": null,
+      "maximum_drawdown": 0.0,
+      "ending_wealth": 1.0,
+      "positive_period_fraction": 0.0
+    }
+  },
+  "exposure_diagnostics": {
+    "Selected pairs": {
+      "average_gross_exposure": 0.33695652173913043,
+      "maximum_gross_exposure": 1.0,
+      "average_absolute_net_exposure": 0.14361135685139273,
+      "maximum_absolute_net_exposure": 0.6303471659734556,
+      "average_largest_position": 0.1948878781389794,
+      "average_daily_turnover": 0.043848403620430194,
+      "active_day_fraction": 0.5801630434782609,
+      "market_beta": 0.021931734260949916
+    },
+    "PCA residuals": {
+      "average_gross_exposure": 1.0,
+      "maximum_gross_exposure": 1.0000000000000009,
+      "average_absolute_net_exposure": 4.092109157672126e-17,
+      "maximum_absolute_net_exposure": 1.942890293094024e-16,
+      "average_largest_position": 0.2259357006575369,
+      "average_daily_turnover": 0.42205623083563887,
+      "active_day_fraction": 1.0,
+      "market_beta": 0.01776910317178847
+    }
+  },
+  "parameter_robustness": [
+    {
+      "case": "Base",
+      "annual_return": 0.0185577967264412,
+      "annual_volatility": 0.057484802726365296,
+      "sharpe_ratio": 0.3486328061501714,
+      "sortino_ratio": 0.34609089994850645,
+      "maximum_drawdown": -0.07505854580430127,
+      "ending_wealth": 1.0551719764778547,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    {
+      "case": "Hedge 126",
+      "annual_return": 0.006983707516789783,
+      "annual_volatility": 0.04720857661572923,
+      "sharpe_ratio": 0.17105038147702373,
+      "sortino_ratio": 0.1517386384059761,
+      "maximum_drawdown": -0.07447613881348203,
+      "ending_wealth": 1.0205339462738827,
+      "positive_period_fraction": 0.26766304347826086
+    },
+    {
+      "case": "Hedge 504",
+      "annual_return": -0.03684471096308817,
+      "annual_volatility": 0.07210525630542947,
+      "sharpe_ratio": -0.4844892341758051,
+      "sortino_ratio": -0.5239239163656745,
+      "maximum_drawdown": -0.14925596386237727,
+      "ending_wealth": 0.896154489615291,
+      "positive_period_fraction": 0.39266304347826086
+    },
+    {
+      "case": "Signal 40",
+      "annual_return": 0.08890740188210278,
+      "annual_volatility": 0.06042090070333209,
+      "sharpe_ratio": 1.4400212636157397,
+      "sortino_ratio": 1.7653093978247374,
+      "maximum_drawdown": -0.049989350464659243,
+      "ending_wealth": 1.2824400139536025,
+      "positive_period_fraction": 0.31521739130434784
+    },
+    {
+      "case": "Signal 90",
+      "annual_return": 0.013013506606051939,
+      "annual_volatility": 0.05343419534784852,
+      "sharpe_ratio": 0.26866653484995406,
+      "sortino_ratio": 0.28598888786535054,
+      "maximum_drawdown": -0.07102204528819456,
+      "ending_wealth": 1.038484584191317,
+      "positive_period_fraction": 0.28804347826086957
+    },
+    {
+      "case": "Entry 1.5",
+      "annual_return": 0.014297078682230291,
+      "annual_volatility": 0.06702257971705604,
+      "sharpe_ratio": 0.24534552009362476,
+      "sortino_ratio": 0.2702159007459511,
+      "maximum_drawdown": -0.07300525000220781,
+      "ending_wealth": 1.042332368210169,
+      "positive_period_fraction": 0.38858695652173914
+    },
+    {
+      "case": "Entry 2.5",
+      "annual_return": 0.013562651533408188,
+      "annual_volatility": 0.03902121389383054,
+      "sharpe_ratio": 0.3646981145645106,
+      "sortino_ratio": 0.35969509279181827,
+      "maximum_drawdown": -0.04550509250935342,
+      "ending_wealth": 1.0401296191486311,
+      "positive_period_fraction": 0.18614130434782608
+    }
+  ],
+  "time_boundary_robustness": [
+    {
+      "boundary": "55 25 20",
+      "selected_pair_count": 1,
+      "annual_return": 0.03443991637458632,
+      "annual_volatility": 0.07613822945876249,
+      "sharpe_ratio": 0.48295563363346067,
+      "sortino_ratio": 0.3266233459169563,
+      "maximum_drawdown": -0.15829731612972675,
+      "ending_wealth": 1.1039482784289267,
+      "positive_period_fraction": 0.16847826086956522
+    },
+    {
+      "boundary": "60 20 20",
+      "selected_pair_count": 2,
+      "annual_return": 0.0185577967264412,
+      "annual_volatility": 0.057484802726365296,
+      "sharpe_ratio": 0.3486328061501714,
+      "sortino_ratio": 0.34609089994850645,
+      "maximum_drawdown": -0.07505854580430127,
+      "ending_wealth": 1.0551719764778547,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    {
+      "boundary": "65 15 20",
+      "selected_pair_count": 2,
+      "annual_return": 0.0185577967264412,
+      "annual_volatility": 0.057484802726365296,
+      "sharpe_ratio": 0.3486328061501714,
+      "sortino_ratio": 0.34609089994850645,
+      "maximum_drawdown": -0.07505854580430127,
+      "ending_wealth": 1.0551719764778547,
+      "positive_period_fraction": 0.3111413043478261
+    }
+  ],
+  "execution_stress": [
+    {
+      "scenario": "Base",
+      "annual_return": 0.0185577967264412,
+      "annual_volatility": 0.057484802726365296,
+      "sharpe_ratio": 0.3486328061501714,
+      "sortino_ratio": 0.34609089994850645,
+      "maximum_drawdown": -0.07505854580430127,
+      "ending_wealth": 1.0551719764778547,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    {
+      "scenario": "Higher spread",
+      "annual_return": 0.016314731315354436,
+      "annual_volatility": 0.05739354443696489,
+      "sharpe_ratio": 0.3106817799447101,
+      "sortino_ratio": 0.3085015346464541,
+      "maximum_drawdown": -0.0769292787873731,
+      "ending_wealth": 1.0483996484941138,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    {
+      "scenario": "Higher borrow",
+      "annual_return": 0.017689433902784435,
+      "annual_volatility": 0.05748478882959063,
+      "sharpe_ratio": 0.33379506752879345,
+      "sortino_ratio": 0.33125505540731565,
+      "maximum_drawdown": -0.07587763806787118,
+      "ending_wealth": 1.0525467882213573,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    {
+      "scenario": "Two day delay",
+      "annual_return": 0.019360096047921882,
+      "annual_volatility": 0.057907544052262075,
+      "sharpe_ratio": 0.36010579790574737,
+      "sortino_ratio": 0.36132973043163924,
+      "maximum_drawdown": -0.06996516345380022,
+      "ending_wealth": 1.0576012685657359,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    {
+      "scenario": "Combined stress",
+      "annual_return": 0.016250920732358676,
+      "annual_volatility": 0.0578214270498514,
+      "sharpe_ratio": 0.30772211171030256,
+      "sortino_ratio": 0.3087299144100777,
+      "maximum_drawdown": -0.07229206525198939,
+      "ending_wealth": 1.0482074090747229,
+      "positive_period_fraction": 0.3111413043478261
+    }
+  ]
+}

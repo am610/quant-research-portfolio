@@ -44,16 +44,24 @@ def build_pair_weights(
     prices: pd.DataFrame,
     dependent: str,
     independent: str,
+    hedge_lookback: int = 252,
+    signal_window: int = 60,
+    entry_z: float = 2.0,
+    exit_z: float = 0.5,
 ) -> pd.DataFrame:
-    state = walk_forward_pair_state(prices, dependent, independent, lookback=252)
-    score = causal_zscore(state["spread"], window=60)
-    position = threshold_positions(score, entry_z=2.0, exit_z=0.5)
+    state = walk_forward_pair_state(prices, dependent, independent, lookback=hedge_lookback)
+    score = causal_zscore(state["spread"], window=signal_window)
+    position = threshold_positions(score, entry_z=entry_z, exit_z=exit_z)
     return dynamic_pair_weights(position, state["hedge_ratio"], dependent, independent)
 
 
 def build_selected_pair_portfolio(
     prices: pd.DataFrame,
     training_prices: pd.DataFrame,
+    hedge_lookback: int = 252,
+    signal_window: int = 60,
+    entry_z: float = 2.0,
+    exit_z: float = 0.5,
 ) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Select eligible peer pairs on training data and assemble their weights."""
 
@@ -72,7 +80,15 @@ def build_selected_pair_portfolio(
     component_weights = []
     for _, pair in selected.iterrows():
         component_weights.append(
-            build_pair_weights(prices, str(pair["dependent"]), str(pair["independent"]))
+            build_pair_weights(
+                prices,
+                str(pair["dependent"]),
+                str(pair["independent"]),
+                hedge_lookback,
+                signal_window,
+                entry_z,
+                exit_z,
+            )
         )
     combined = pd.DataFrame(0.0, index=prices.index, columns=prices.columns)
     for weights in component_weights:

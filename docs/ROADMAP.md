@@ -1,5 +1,11 @@
 # Delivery Roadmap
 
+## Current state
+
+Project 1 is complete. The repository now includes the classical baseline, regime filtering, controlled peer selection, false discovery correction, walk forward pair and principal component models, transaction and borrow costs, execution delay stress, benchmark comparison, exposure diagnostics, bootstrap uncertainty, parameter robustness, time boundary checks, five executed notebooks, and a final research synthesis.
+
+The next development phase is Project 2, calibrated uncertainty aware prediction.
+
 ## Phase 1: Research foundation
 
 Target duration: two to three days.
@@ -55,4 +61,3 @@ Target duration: three to five days.
 ## Definition of recruiter ready
 
 Each study must have a clear hypothesis, a defensible baseline, an untouched test period, realistic costs, uncertainty estimates, documented limitations, automated checks, and a concise visual summary.
-
