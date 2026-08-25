@@ -103,7 +103,7 @@ This study asks when accurate short horizon forecasts remain tradable after fees
 1. Reproducible Python package and configuration files
 2. Colab notebooks for compact demonstrations
 3. Research reports with methods, results, and limitations
-4. Interactive visual summaries for recruiters
+4. Interactive visual summaries of the research results
 5. Automated tests for data leakage and accounting logic
 
 ## Status

@@ -48,7 +48,7 @@ Target duration: ten to fourteen days.
 5. Model fees, spread, fills, latency, and adverse selection.
 6. Produce a Colab demonstration and research report.
 
-## Phase 5: Recruiter presentation
+## Phase 5: Research presentation
 
 Target duration: three to five days.
 
@@ -58,6 +58,6 @@ Target duration: three to five days.
 4. Add badges for tests, reproducibility, and Colab access.
 5. Record a brief guided demonstration.
 
-## Definition of recruiter ready
+## Definition of research complete
 
 Each study must have a clear hypothesis, a defensible baseline, an untouched test period, realistic costs, uncertainty estimates, documented limitations, automated checks, and a concise visual summary.
