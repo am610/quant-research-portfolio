@@ -1,0 +1,104 @@
+{
+  "universe": [
+    "XOM",
+    "CVX",
+    "COP",
+    "KO",
+    "PEP",
+    "V",
+    "MA",
+    "JPM",
+    "BAC",
+    "WFC",
+    "HD",
+    "LOW"
+  ],
+  "selection_data_end": "2020-10-09",
+  "selection_rule": "Predefined peer groups with family false discovery rate at five percent",
+  "selected_pairs": [
+    {
+      "dependent": "BAC",
+      "independent": "JPM",
+      "adf_statistic": -4.170654460091621,
+      "adf_pvalue": 0.0007384553600544316,
+      "half_life": 65.29663863589994,
+      "hedge_ratio": 1.0142908750624517,
+      "adjusted_pvalue": 0.002215366080163295,
+      "peer_group": "Banks",
+      "family_adjusted_pvalue": 0.0066460982404898845
+    },
+    {
+      "dependent": "PEP",
+      "independent": "KO",
+      "adf_statistic": -3.81650093829497,
+      "adf_pvalue": 0.0027429296760691627,
+      "half_life": 52.58703044304755,
+      "hedge_ratio": 1.49414083740281,
+      "adjusted_pvalue": 0.0027429296760691627,
+      "peer_group": "Beverages",
+      "family_adjusted_pvalue": 0.012343183542311233
+    }
+  ],
+  "validation": {
+    "annual_return": -0.01523391466891022,
+    "annual_volatility": 0.04610528433710957,
+    "sharpe_ratio": -0.30992990792468966,
+    "sortino_ratio": -0.38729176377155405,
+    "maximum_drawdown": -0.08952981205376376,
+    "ending_wealth": 0.9561551542766059,
+    "positive_period_fraction": 0.33152173913043476
+  },
+  "test": {
+    "annual_return": 0.01942678847259094,
+    "annual_volatility": 0.05748489635277345,
+    "sharpe_ratio": 0.3634682512347595,
+    "sortino_ratio": 0.3609344037546166,
+    "maximum_drawdown": -0.07471745419231401,
+    "ending_wealth": 1.057803372794699,
+    "positive_period_fraction": 0.3111413043478261
+  },
+  "test_sharpe_interval_95": [
+    -0.6317212114076379,
+    1.4772525433459809
+  ],
+  "test_probability_positive_sharpe": 0.762,
+  "test_average_daily_turnover": 0.04384840362717875,
+  "yearly_test_results": {
+    "2023": {
+      "annual_return": -0.01243469803616215,
+      "annual_volatility": 0.0935153598470261,
+      "sharpe_ratio": -0.08744782728683854,
+      "sortino_ratio": -0.08229964154465133,
+      "maximum_drawdown": -0.07471745419231401,
+      "ending_wealth": 0.9963323908556663,
+      "positive_period_fraction": 0.47297297297297297
+    },
+    "2024": {
+      "annual_return": 0.017904955748215823,
+      "annual_volatility": 0.032242591600660626,
+      "sharpe_ratio": 0.5664731280741194,
+      "sortino_ratio": 0.5893015216185286,
+      "maximum_drawdown": -0.02481233811816963,
+      "ending_wealth": 1.0179049557482158,
+      "positive_period_fraction": 0.25396825396825395
+    },
+    "2025": {
+      "annual_return": 0.018926724300829756,
+      "annual_volatility": 0.06777520732810138,
+      "sharpe_ratio": 0.3104666992393198,
+      "sortino_ratio": 0.34302986303188326,
+      "maximum_drawdown": -0.041135191250800895,
+      "ending_wealth": 1.0187751108569398,
+      "positive_period_fraction": 0.328
+    },
+    "2026": {
+      "annual_return": 0.037740699570685265,
+      "annual_volatility": 0.049224489226227325,
+      "sharpe_ratio": 0.7770435005546386,
+      "sortino_ratio": 1.0404884509119832,
+      "maximum_drawdown": -0.02971937095414101,
+      "ending_wealth": 1.0238000413492072,
+      "positive_period_fraction": 0.3
+    }
+  }
+}

@@ -4,6 +4,15 @@ Rigorous, reproducible studies of statistical arbitrage, predictive uncertainty,
 
 [![Open baseline in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/01_pair_trading_baseline.ipynb)
 [![Open regime study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/02_regime_filter.ipynb)
+[![Open universe study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/03_peer_universe.ipynb)
+
+## Main study
+
+![Peer universe dashboard](docs/assets/universe_dashboard.png)
+
+The expanded experiment begins with twelve liquid stocks in five economically predefined peer groups. Pair relationships are estimated using training data only, all stationarity tests receive a family level false discovery correction, and hedge ratios are updated from trailing observations.
+
+Only BAC with JPM and PEP with KO pass the five percent corrected threshold. Their combined untouched test result has a 1.94 percent annual return, 5.75 percent annual volatility, a 0.36 Sharpe estimate, and a 7.47 percent maximum drawdown. The 95 percent bootstrap Sharpe interval spans negative 0.63 to 1.48, so the evidence remains inconclusive.
 
 ![Statistical arbitrage baseline](docs/assets/pair_baseline.png)
 
@@ -57,7 +66,7 @@ This study asks when accurate short horizon forecasts remain tradable after fees
 
 ## Status
 
-The portfolio architecture, data validation, cost accounting, risk metrics, bootstrap uncertainty, and classical pair baseline are implemented and tested. The first real market result and Colab ready demonstration are available. Regime modeling is the next milestone.
+The data validation, cost accounting, risk metrics, bootstrap uncertainty, classical baseline, causal regime filter, training only pair selection, false discovery correction, and walk forward hedge estimation are implemented and tested. Three executed Colab notebooks document the research progression.
 
 ## Reproduce the first study
 

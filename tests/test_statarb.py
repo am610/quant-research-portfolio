@@ -1,7 +1,12 @@
 import numpy as np
 import pandas as pd
 
-from quant_portfolio.statarb import fit_pair_model, run_pair_backtest, threshold_positions
+from quant_portfolio.statarb import (
+    fit_pair_model,
+    run_pair_backtest,
+    threshold_positions,
+    walk_forward_pair_state,
+)
 
 
 def synthetic_prices(rows: int = 500) -> pd.DataFrame:
@@ -34,3 +39,9 @@ def test_threshold_position_exits_near_zero() -> None:
     zscore = pd.Series([0.0, 2.2, 1.0, 0.4, -2.3, -0.2])
     assert threshold_positions(zscore).tolist() == [0.0, -1.0, -1.0, 0.0, 1.0, 0.0]
 
+
+def test_walk_forward_state_starts_after_lookback() -> None:
+    prices = synthetic_prices(200)
+    state = walk_forward_pair_state(prices, "A", "B", lookback=60)
+    assert state.iloc[:60].isna().all().all()
+    assert state.iloc[60:].notna().all().all()

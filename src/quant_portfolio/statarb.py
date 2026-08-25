@@ -118,3 +118,48 @@ def run_pair_backtest(
     pnl = portfolio_returns(weights, returns, cost_bps)
     return {"spread": spread, "zscore": zscore, "position": position, "weights": weights, "pnl": pnl}
 
+
+def walk_forward_pair_state(
+    prices: pd.DataFrame,
+    dependent: str,
+    independent: str,
+    lookback: int = 252,
+) -> pd.DataFrame:
+    """Estimate hedge parameters from trailing observations at every date."""
+
+    if lookback < 20:
+        raise ValueError("lookback must be at least twenty")
+    selected = prices[[dependent, independent]].dropna()
+    if (selected <= 0).any().any():
+        raise ValueError("Prices must be strictly positive")
+    log_prices = np.log(selected)
+    state = pd.DataFrame(index=selected.index, columns=["intercept", "hedge_ratio", "spread"])
+    for location in range(lookback, len(selected)):
+        history = log_prices.iloc[location - lookback : location]
+        model = fit_pair_model(history, dependent, independent)
+        current = log_prices.iloc[location]
+        state.iloc[location] = [
+            model.intercept,
+            model.hedge_ratio,
+            current[dependent] - model.intercept - model.hedge_ratio * current[independent],
+        ]
+    return state.astype(float)
+
+
+def dynamic_pair_weights(
+    position: pd.Series,
+    hedge_ratio: pd.Series,
+    dependent: str,
+    independent: str,
+) -> pd.DataFrame:
+    """Convert positions and changing hedge ratios into unit gross weights."""
+
+    position, hedge_ratio = position.align(hedge_ratio, join="inner")
+    normalizer = 1.0 + hedge_ratio.abs()
+    return pd.DataFrame(
+        {
+            dependent: position / normalizer,
+            independent: -position * hedge_ratio / normalizer,
+        },
+        index=position.index,
+    ).fillna(0.0)
