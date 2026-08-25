@@ -1,0 +1,173 @@
+{
+  "peer_groups": {
+    "Integrated energy": [
+      "XOM",
+      "CVX",
+      "COP"
+    ],
+    "Beverages": [
+      "KO",
+      "PEP"
+    ],
+    "Payments": [
+      "V",
+      "MA"
+    ],
+    "Banks": [
+      "JPM",
+      "BAC",
+      "WFC"
+    ],
+    "Home improvement": [
+      "HD",
+      "LOW"
+    ]
+  },
+  "selected_pairs": [
+    {
+      "dependent": "BAC",
+      "independent": "JPM",
+      "peer_group": "Banks",
+      "family_adjusted_pvalue": 0.00664608774459473
+    },
+    {
+      "dependent": "PEP",
+      "independent": "KO",
+      "peer_group": "Beverages",
+      "family_adjusted_pvalue": 0.012343252979097982
+    }
+  ],
+  "selected_pca_parameters": {
+    "components": 3.0,
+    "signal_window": 20.0,
+    "entry_score": 0.5,
+    "validation_score": 0.42574881529031294,
+    "validation_sharpe": 0.5212090968629318
+  },
+  "pair_test_at_three_bps": {
+    "annual_return": 0.019426792189733755,
+    "annual_volatility": 0.05748492295379105,
+    "sharpe_ratio": 0.36346817399669484,
+    "sortino_ratio": 0.3609335812515534,
+    "maximum_drawdown": -0.07471759287589752,
+    "ending_wealth": 1.0578033840598091,
+    "positive_period_fraction": 0.3111413043478261
+  },
+  "pca_test_at_three_bps": {
+    "annual_return": 0.006780426365203374,
+    "annual_volatility": 0.07604604954423326,
+    "sharpe_ratio": 0.12696243297362603,
+    "sortino_ratio": 0.16145742374426897,
+    "maximum_drawdown": -0.09124999011137003,
+    "ending_wealth": 1.0199323637633795,
+    "positive_period_fraction": 0.5163043478260869
+  },
+  "pca_test_sharpe_interval_95": [
+    -0.5983952240202481,
+    0.929324950018286
+  ],
+  "pair_cost_sensitivity": [
+    {
+      "cost_bps": 0.0,
+      "annual_return": 0.022803125843787297,
+      "annual_volatility": 0.0576280370879862,
+      "sharpe_ratio": 0.420088563033485,
+      "sortino_ratio": 0.41234790391356557,
+      "maximum_drawdown": -0.07450737996122314,
+      "ending_wealth": 1.0680682208535286,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    {
+      "cost_bps": 1.0,
+      "annual_return": 0.021676495767813275,
+      "annual_volatility": 0.057579512225067485,
+      "sharpe_ratio": 0.401252088236372,
+      "sortino_ratio": 0.39833718343078395,
+      "maximum_drawdown": -0.07457745389463744,
+      "ending_wealth": 1.0646357561814896,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    {
+      "cost_bps": 3.0,
+      "annual_return": 0.019426792189733755,
+      "annual_volatility": 0.05748492295379105,
+      "sharpe_ratio": 0.36346817399669484,
+      "sortino_ratio": 0.3609335812515534,
+      "maximum_drawdown": -0.07471759287589752,
+      "ending_wealth": 1.0578033840598091,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    {
+      "cost_bps": 5.0,
+      "annual_return": 0.017181822777184275,
+      "annual_volatility": 0.05739362774674948,
+      "sharpe_ratio": 0.32554102555101794,
+      "sortino_ratio": 0.3233591777473142,
+      "maximum_drawdown": -0.07611126289900572,
+      "ending_wealth": 1.0510141963849347,
+      "positive_period_fraction": 0.3111413043478261
+    },
+    {
+      "cost_bps": 10.0,
+      "annual_return": 0.011590048897095029,
+      "annual_volatility": 0.057179903403787466,
+      "sharpe_ratio": 0.2301347291526946,
+      "sortino_ratio": 0.22908447618909555,
+      "maximum_drawdown": -0.08083971994453842,
+      "ending_wealth": 1.034228399394193,
+      "positive_period_fraction": 0.30842391304347827
+    }
+  ],
+  "pca_cost_sensitivity": [
+    {
+      "cost_bps": 0.0,
+      "annual_return": 0.03945948300003188,
+      "annual_volatility": 0.07630916630919592,
+      "sharpe_ratio": 0.5454220429643981,
+      "sortino_ratio": 0.6948714015506133,
+      "maximum_drawdown": -0.062140273076038754,
+      "ending_wealth": 1.1196667030371135,
+      "positive_period_fraction": 0.532608695652174
+    },
+    {
+      "cost_bps": 1.0,
+      "annual_return": 0.02845090875385492,
+      "annual_volatility": 0.07621935091306814,
+      "sharpe_ratio": 0.4062677571415555,
+      "sortino_ratio": 0.5174020066809147,
+      "maximum_drawdown": -0.07081110159658621,
+      "ending_wealth": 1.0853848344087647,
+      "positive_period_fraction": 0.5258152173913043
+    },
+    {
+      "cost_bps": 3.0,
+      "annual_return": 0.006780426365203374,
+      "annual_volatility": 0.07604604954423326,
+      "sharpe_ratio": 0.12696243297362603,
+      "sortino_ratio": 0.16145742374426897,
+      "maximum_drawdown": -0.09124999011137003,
+      "ending_wealth": 1.0199323637633795,
+      "positive_period_fraction": 0.5163043478260869
+    },
+    {
+      "cost_bps": 5.0,
+      "annual_return": -0.014435870674693763,
+      "annual_volatility": 0.07588123529818268,
+      "sharpe_ratio": -0.15360163503003738,
+      "sortino_ratio": -0.19512097859932104,
+      "maximum_drawdown": -0.11764037895594248,
+      "ending_wealth": 0.9584199932422767,
+      "positive_period_fraction": 0.5054347826086957
+    },
+    {
+      "cost_bps": 10.0,
+      "annual_return": -0.06555120601070596,
+      "annual_volatility": 0.07550668852376279,
+      "sharpe_ratio": -0.8599458706845107,
+      "sortino_ratio": -1.0877971484363358,
+      "maximum_drawdown": -0.2095701919247459,
+      "ending_wealth": 0.8203579441033712,
+      "positive_period_fraction": 0.4891304347826087
+    }
+  ]
+}

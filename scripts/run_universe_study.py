@@ -51,16 +51,15 @@ def build_pair_weights(
     return dynamic_pair_weights(position, state["hedge_ratio"], dependent, independent)
 
 
-def main() -> None:
-    ASSET_DIR.mkdir(parents=True, exist_ok=True)
-    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    frames = load_yahoo_daily(UNIVERSE, "2012-01-01", "2026-08-24")
-    prices = pd.concat({symbol: frames[symbol]["close"] for symbol in UNIVERSE}, axis=1).dropna()
-    split = chronological_split(prices)
+def build_selected_pair_portfolio(
+    prices: pd.DataFrame,
+    training_prices: pd.DataFrame,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+    """Select eligible peer pairs on training data and assemble their weights."""
 
     screens = []
     for group_name, symbols in PEER_GROUPS.items():
-        group_screen = screen_pairs(split.train[symbols])
+        group_screen = screen_pairs(training_prices[symbols])
         group_screen["peer_group"] = group_name
         screens.append(group_screen)
     screen = pd.concat(screens, ignore_index=True)
@@ -69,18 +68,30 @@ def main() -> None:
     selected = screen.loc[screen["family_adjusted_pvalue"] <= 0.05].copy()
     if selected.empty:
         raise RuntimeError("No pair passed the predefined false discovery threshold")
+
     component_weights = []
     for _, pair in selected.iterrows():
         component_weights.append(
             build_pair_weights(prices, str(pair["dependent"]), str(pair["independent"]))
         )
-
     combined = pd.DataFrame(0.0, index=prices.index, columns=prices.columns)
     for weights in component_weights:
         combined = combined.add(weights.reindex(columns=prices.columns, fill_value=0.0), fill_value=0.0)
     combined /= len(component_weights)
     gross_exposure = combined.abs().sum(axis=1)
     combined = combined.div(gross_exposure.where(gross_exposure > 1.0, 1.0), axis=0)
+    return combined, screen
+
+
+def main() -> None:
+    ASSET_DIR.mkdir(parents=True, exist_ok=True)
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    frames = load_yahoo_daily(UNIVERSE, "2012-01-01", "2026-08-24")
+    prices = pd.concat({symbol: frames[symbol]["close"] for symbol in UNIVERSE}, axis=1).dropna()
+    split = chronological_split(prices)
+
+    combined, screen = build_selected_pair_portfolio(prices, split.train)
+    selected = screen.loc[screen["family_adjusted_pvalue"] <= 0.05].copy()
 
     pnl = portfolio_returns(combined, prices.pct_change().fillna(0.0), cost_bps=3.0)
     validation_returns = pnl.loc[split.validation.index, "net_return"]

@@ -5,6 +5,7 @@ Rigorous, reproducible studies of statistical arbitrage, predictive uncertainty,
 [![Open baseline in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/01_pair_trading_baseline.ipynb)
 [![Open regime study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/02_regime_filter.ipynb)
 [![Open universe study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/03_peer_universe.ipynb)
+[![Open PCA and cost study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/04_pca_cost_sensitivity.ipynb)
 
 ## Main study
 
@@ -13,6 +14,14 @@ Rigorous, reproducible studies of statistical arbitrage, predictive uncertainty,
 The expanded experiment begins with twelve liquid stocks in five economically predefined peer groups. Pair relationships are estimated using training data only, all stationarity tests receive a family level false discovery correction, and hedge ratios are updated from trailing observations.
 
 Only BAC with JPM and PEP with KO pass the five percent corrected threshold. Their combined untouched test result has a 1.94 percent annual return, 5.75 percent annual volatility, a 0.36 Sharpe estimate, and a 7.47 percent maximum drawdown. The 95 percent bootstrap Sharpe interval spans negative 0.63 to 1.48, so the evidence remains inconclusive.
+
+## Classical model and cost comparison
+
+![Principal component and cost comparison](docs/assets/pca_cost_dashboard.png)
+
+The walk forward principal component residual strategy appears stronger before costs, with a test Sharpe estimate of 0.55 compared with 0.42 for selected pairs. Its advantage disappears quickly because it trades more aggressively. At three basis points its Sharpe estimate falls to 0.13, and at five basis points it becomes negative. The selected pair portfolio remains positive through ten basis points.
+
+This comparison demonstrates why predictive structure and tradable value are not equivalent.
 
 ![Statistical arbitrage baseline](docs/assets/pair_baseline.png)
 
@@ -66,7 +75,7 @@ This study asks when accurate short horizon forecasts remain tradable after fees
 
 ## Status
 
-The data validation, cost accounting, risk metrics, bootstrap uncertainty, classical baseline, causal regime filter, training only pair selection, false discovery correction, and walk forward hedge estimation are implemented and tested. Three executed Colab notebooks document the research progression.
+The data validation, cost accounting, risk metrics, bootstrap uncertainty, classical pair baseline, causal regime filter, training only pair selection, false discovery correction, walk forward hedge estimation, principal component residual baseline, and cost sensitivity analysis are implemented and tested. Four executed Colab notebooks document the research progression.
 
 ## Reproduce the first study
 
