@@ -1,0 +1,21 @@
+project:
+  random_seed: 42
+  annualization_days: 252
+
+evaluation:
+  train_fraction: 0.60
+  validation_fraction: 0.20
+  test_fraction: 0.20
+  bootstrap_samples: 1000
+  confidence_level: 0.95
+
+costs:
+  commission_bps: 1.0
+  slippage_bps: 2.0
+  borrow_bps_annual: 50.0
+
+risk:
+  target_volatility_annual: 0.10
+  maximum_gross_leverage: 2.0
+  maximum_position_weight: 0.10
+

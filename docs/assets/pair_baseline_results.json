@@ -1,0 +1,37 @@
+{
+  "symbols": [
+    "XLE",
+    "XOP"
+  ],
+  "retrieval_end": "2026-08-24",
+  "train_start": "2012-01-03",
+  "train_end": "2020-10-09",
+  "validation_start": "2020-10-12",
+  "validation_end": "2023-09-14",
+  "test_start": "2023-09-15",
+  "test_end": "2026-08-21",
+  "hedge_ratio": 2.1256949932991818,
+  "validation": {
+    "annual_return": -0.031076401618035265,
+    "annual_volatility": 0.06163461662808292,
+    "sharpe_ratio": -0.4814084188537843,
+    "sortino_ratio": -0.4959454097337874,
+    "maximum_drawdown": -0.15414540942988886,
+    "ending_wealth": 0.9119199827490456,
+    "positive_period_fraction": 0.19021739130434784
+  },
+  "test": {
+    "annual_return": 0.013382010313651271,
+    "annual_volatility": 0.05015887179918835,
+    "sharpe_ratio": 0.2900205906111438,
+    "sortino_ratio": 0.2894389047409426,
+    "maximum_drawdown": -0.0940428178443452,
+    "ending_wealth": 1.039588295920701,
+    "positive_period_fraction": 0.18478260869565216
+  },
+  "test_sharpe_interval_95": [
+    -0.9572170727067999,
+    1.4578295832130461
+  ],
+  "test_probability_positive_sharpe": 0.7
+}

@@ -1,0 +1,33 @@
+{
+  "selection_rule": "Highest validation Sharpe minus absolute maximum drawdown",
+  "selected_parameters": {
+    "maximum_half_life": 40.0,
+    "volatility_quantile": 0.7,
+    "maximum_volatility": 0.0211730584332695,
+    "validation_score": 0.6222470772938947,
+    "validation_exposure_fraction": 0.1453804347826087
+  },
+  "eligible_test_fraction": 0.8165760869565217,
+  "baseline_test": {
+    "annual_return": 0.02472018505787288,
+    "annual_volatility": 0.05234705228669216,
+    "sharpe_ratio": 0.49259733637604586,
+    "sortino_ratio": 0.525728546000773,
+    "maximum_drawdown": -0.09404282079056892,
+    "ending_wealth": 1.073925571161459,
+    "positive_period_fraction": 0.21875
+  },
+  "filtered_test": {
+    "annual_return": 0.031547018943373084,
+    "annual_volatility": 0.043676549477621736,
+    "sharpe_ratio": 0.732930563297233,
+    "sortino_ratio": 0.6442240845812587,
+    "maximum_drawdown": -0.03783860306097697,
+    "ending_wealth": 1.0949556457223866,
+    "positive_period_fraction": 0.1671195652173913
+  },
+  "filtered_test_sharpe_interval_95": [
+    -0.2166178319320422,
+    1.7921643731302574
+  ]
+}
