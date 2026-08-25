@@ -1,12 +1,12 @@
-# Quant Research Portfolio
+# Regime Aware Statistical Arbitrage
 
 Rigorous, reproducible studies of statistical arbitrage, predictive uncertainty, and market microstructure.
 
-[![Open baseline in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/01_pair_trading_baseline.ipynb)
-[![Open regime study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/02_regime_filter.ipynb)
-[![Open universe study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/03_peer_universe.ipynb)
-[![Open PCA and cost study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/04_pca_cost_sensitivity.ipynb)
-[![Open final synthesis in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/quant-research-portfolio/blob/main/notebooks/05_final_validation.ipynb)
+[![Open baseline in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/regime-aware-statistical-arbitrage/blob/main/notebooks/01_pair_trading_baseline.ipynb)
+[![Open regime study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/regime-aware-statistical-arbitrage/blob/main/notebooks/02_regime_filter.ipynb)
+[![Open universe study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/regime-aware-statistical-arbitrage/blob/main/notebooks/03_peer_universe.ipynb)
+[![Open PCA and cost study in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/regime-aware-statistical-arbitrage/blob/main/notebooks/04_pca_cost_sensitivity.ipynb)
+[![Open final synthesis in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/am610/regime-aware-statistical-arbitrage/blob/main/notebooks/05_final_validation.ipynb)
 
 ## Executive summary
 
